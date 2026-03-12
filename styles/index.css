@@ -8,6 +8,9 @@ body{
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to right, #EBF3F5, #C5E2F0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header{
@@ -44,4 +47,61 @@ header{
 .menu a:hover{
     transform: scale(1.1);
     text-decoration: underline;
+}
+
+.middle{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75vw;
+    height: 70vh;
+}
+
+.TitleFrontPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Inter;
+}
+
+.TitleFrontPage h2{
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+.TitleFrontPage h1{
+    font-size: 6.5rem;
+    font-weight: 600;
+}
+
+.TitleFrontPage p{
+    margin-top: 1.5rem;
+    font-size: 1rem;
+}
+
+.TitleFrontPage a{
+    margin-top: 2rem;
+    width: 6vw;
+    background: #84d4ee;
+    padding: .5rem;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.TitleFrontPage a:hover{
+    background-color: #50b6d8;
+}
+
+.ImageFrontPage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 70vh;
+}
+
+.ImageFrontPage img{
+    width: 42vw;
+    height: auto;
 }
