@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #EBF3F5, #C5E2F0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height:10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.logo{
+    width: 6vw;
+    height: 6vh;
+}
+
+.menu{
+    display: flex;
+    width: 70vW;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Iosevka Charon;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.2s;
+    font-size: .9rem;
+    padding: 1rem;
+}
+
+.menu a:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}

@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to right, #EBF3F5, #C5E2F0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    width: 100vw;
+    height:10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.logo{
+    width: 6vw;
+    height: 6vh;
+}
+
+.menu{
+    display: flex;
+    width: 70vW;
+    height: 10vh;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Iosevka Charon;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #000;
+    transition: transform 0.2s;
+    font-size: .9rem;
+    padding: 1rem;
+}
+
+.menu a:hover{
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+
+.title{
+    font-family: Iosevka Charon;
+}
+
+.title h1{
+        font-size: 800;
+}
+
+
+/* -------------------------------  Carrusel  ------------------------------------ */
+
+
+
+
+/* Contenedor principal: apila el carousel y los controles uno encima del otro, centrados */
+.carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 3rem;
+}
+
+/* Área donde viven las tarjetas — tiene un tamaño fijo para que no se muevan al cambiar de slide */
+.carousel-track-container {
+    position: relative;
+    width: 860px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cada tarjeta del carousel: esquinas redondeadas, sombra suave y animación al moverse */
+.slide {
+    position: absolute;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+
+/* La imagen ocupa toda la tarjeta sin deformarse */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Tarjeta central (la que está activa): la más grande, al frente y con sombra más pronunciada */
+.slide[data-pos="0"] {
+    width: 500px;
+    height: 310px;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+}
+
+/* Tarjeta inmediata a la izquierda: más pequeña y un poco oscurecida */
+.slide[data-pos="-1"] {
+    width: 210px;
+    height: 240px;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(calc(-50% - 310px));
+    filter: brightness(0.75) saturate(0.7);
+}
+
+/* Tarjeta inmediata a la derecha: igual que la de la izquierda pero al otro lado */
+.slide[data-pos="1"] {
+    width: 210px;
+    height: 240px;
+    z-index: 5;
+    left: 50%;
+    transform: translateX(calc(-50% + 310px));
+    filter: brightness(0.75) saturate(0.7);
+}
+
+/* Segunda tarjeta a la izquierda: aún más pequeña y oscura, casi de fondo */
+.slide[data-pos="-2"] {
+    width: 140px;
+    height: 190px;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(calc(-50% - 420px));
+    filter: brightness(0.5) saturate(0.4);
+    opacity: 0.7;
+}
+
+/* Segunda tarjeta a la derecha: igual que la anterior pero al otro lado */
+.slide[data-pos="2"] {
+    width: 140px;
+    height: 190px;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(calc(-50% + 420px));
+    filter: brightness(0.5) saturate(0.4);
+    opacity: 0.7;
+}
+
+/* Tarjetas que quedan fuera del rango visible: completamente invisibles e inactivas al clic */
+.slide[data-pos="-3"],
+.slide[data-pos="3"],
+.slide[data-hidden] {
+    width: 80px;
+    height: 140px;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Posición de salida por la izquierda (fuera de pantalla) */
+.slide[data-pos="-3"] {
+    left: 50%;
+    transform: translateX(calc(-50% - 490px));
+}
+
+/* Posición de salida por la derecha (fuera de pantalla) */
+.slide[data-pos="3"] {
+    left: 50%;
+    transform: translateX(calc(-50% + 490px));
+}
+
+/* Barra de controles: flechas y puntos alineados en fila */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Botones de flecha: sin fondo ni borde, solo el ícono en gris */
+.arrow-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    transition: color 0.2s;
+    padding: 0;
+}
+
+/* Al pasar el mouse encima, la flecha se oscurece */
+.arrow-btn:hover { color: #333; }
+.arrow-btn svg { width: 22px; height: 22px; }
+
+/* Fila de puntitos indicadores */
+.dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* Cada puntito: pequeño círculo gris */
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c8c2ba;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 0;
+}
+
+/* El puntito del slide activo se pone morado y un poco más grande */
+.dot.active {
+    background: #7c6fe0;
+    width: 10px;
+    height: 10px;
+}

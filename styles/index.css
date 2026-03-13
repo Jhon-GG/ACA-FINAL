@@ -34,7 +34,7 @@ header{
     height: 10vh;
     justify-content: space-around;
     align-items: center;
-    font-family: inter;
+    font-family: Iosevka Charon;
 }
 
 .menu a{
@@ -42,6 +42,7 @@ header{
     color: #000;
     transition: transform 0.2s;
     font-size: .9rem;
+    padding: 1rem;
 }
 
 .menu a:hover{
@@ -61,7 +62,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: Inter;
+    font-family: Iosevka Charon;
 }
 
 .TitleFrontPage h2{
@@ -87,6 +88,9 @@ header{
     text-decoration: none;
     color: #fff;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .TitleFrontPage a:hover{
