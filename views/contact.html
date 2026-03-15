@@ -12,6 +12,8 @@
 </head>
 <body>
  
+    <!-- MENU HEADER -->
+
     <header>
         <img class="logo" src="../assets/logo.svg" alt="logo">
         <section class="menu">
@@ -23,6 +25,76 @@
         </section>
     </header>
  
+    <!-- Division: imagen + formulario -->
+    <div class="page">
+ 
+        <!-- Izquierda: imagen -->
+        <div class="panel-image">
+            <img
+                src="https://i.pinimg.com/736x/5e/7e/66/5e7e66ed665aaa373d85da2cb3b00bcc.jpg"
+                alt="Moto Zone"
+            >
+            <div class="panel-image-label">
+                <h2>HABLEMOS<br>DE <span>MOTOS</span></h2>
+                <p>Estamos para ayudarte</p>
+            </div>
+        </div>
+ 
+        <!-- Derecha: formulario -->
+        <div class="panel-form">
+            <p class="form-eyebrow">Contáctanos</p>
+            <h1 class="form-title">ESCRÍBE<span>NOS</span></h1>
+            <p class="form-subtitle">Resolvemos tus dudas sobre productos, repuestos o servicios.<br>Te respondemos en menos de 24 horas.</p>
+            <div class="form-divider"></div>
+ 
+            <div class="form-grid">
+ 
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre">
+                </div>
+ 
+                <div class="form-group">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" placeholder="Tu apellido">
+                </div>
+ 
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" placeholder="correo@ejemplo.com">
+                </div>
+ 
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" placeholder="+57 300 000 0000">
+                </div>
+ 
+                <div class="form-group full">
+                    <label for="asunto">Asunto</label>
+                    <select id="asunto">
+                        <option value="" disabled selected>Selecciona un tema</option>
+                        <option>Consulta sobre motocicletas</option>
+                        <option>Accesorios y repuestos</option>
+                        <option>Servicio técnico</option>
+                        <option>Garantías</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+ 
+                <div class="form-group full">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                </div>
+ 
+            </div>
+ 
+            <div class="btn-submit">
+                <button type="button">Enviar mensaje</button>
+                <span class="btn-note">Te respondemos en &lt; 24 h</span>
+            </div>
+        </div>
+ 
+    </div>
  
 </body>
 </html>

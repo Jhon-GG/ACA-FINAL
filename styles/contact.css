@@ -61,3 +61,295 @@ header{
     border-radius: 50px;
 }
 
+/* ── DIVISION DEL PANEL ── */
+.page {
+    min-height: calc(100vh - 64px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 40px 48px;
+    background: #eaf4f8;
+    box-sizing: border-box;
+}
+ 
+/* ── PANEL IMAGEN ── */
+.panel-image {
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+}
+ 
+.panel-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.85) brightness(0.9);
+    transition: transform 0.8s ease;
+}
+ 
+.panel-image:hover img {
+    transform: scale(1.04);
+}
+ 
+.panel-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(141, 194, 212, 0.35) 0%,
+        rgba(11, 40, 52, 0.55) 100%
+    );
+    pointer-events: none;
+}
+ 
+.panel-image::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #8dc2d4;
+    z-index: 3;
+}
+ 
+.panel-image-label {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    z-index: 2;
+    animation: fadeUp 0.7s 0.2s ease both;
+}
+ 
+.panel-image-label h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 56px;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    line-height: 0.95;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+ 
+.panel-image-label h2 span {
+    color: #8dc2d4;
+}
+ 
+.panel-image-label p {
+    margin-top: 10px;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+}
+ 
+/* ── PANEL FORMULARIO ── */
+.panel-form {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 56px;
+    position: relative;
+}
+ 
+.panel-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 120px;
+    background: #8dc2d4;
+    opacity: 0.15;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+ 
+.form-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #8dc2d4;
+    font-weight: 700;
+    margin-bottom: 12px;
+    animation: fadeUp 0.5s 0.1s ease both;
+    font-family: 'Iosevka Charon', monospace;
+}
+ 
+.form-title {
+    font-size: 52px;
+    letter-spacing: 0.04em;
+    color: #0b2834;
+    line-height: 1;
+    margin-bottom: 6px;
+    animation: fadeUp 0.5s 0.2s ease both;
+    font-family: 'Iosevka Charon', monospace;
+}
+ 
+.form-title span {
+    color: #8dc2d4;
+}
+ 
+.form-subtitle {
+    font-size: 14px;
+    color: #6a9aaa;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeUp 0.5s 0.25s ease both;
+    font-family: 'Iosevka Charon', monospace;
+}
+ 
+.form-divider {
+    width: 40px;
+    height: 3px;
+    background: #8dc2d4;
+    margin-bottom: 36px;
+    animation: fadeUp 0.5s 0.3s ease both;
+}
+ 
+/* ── CAMPOS ── */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    animation: fadeUp 0.6s 0.35s ease both;
+}
+ 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+ 
+.form-group.full {
+    grid-column: 1 / -1;
+}
+ 
+label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4a7a8a;
+    font-weight: 700;
+    font-family: 'Iosevka Charon', monospace;
+}
+ 
+input,
+select,
+textarea {
+    font-family: 'Iosevka Charon', monospace;
+    font-size: 14px;
+    color: #0b2834;
+    background: #f0f8fb;
+    border: 1.5px solid #c5e0ea;
+    border-radius: 3px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    width: 100%;
+    font-family: 'Iosevka Charon', monospace;    
+}
+ 
+input::placeholder,
+textarea::placeholder {
+    color: #a0c4d0;
+    font-weight: 300;
+}
+ 
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8dc2d4;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(141, 194, 212, 0.2);
+    font-family: 'Iosevka Charon', monospace;
+}
+ 
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238dc2d4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    cursor: pointer;
+}
+ 
+textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+ 
+/* ── BOTÓN ── */
+.btn-submit {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    animation: fadeUp 0.6s 0.45s ease both;
+}
+ 
+.btn-submit button {
+    font-family: 'Iosevka Charon', monospace;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #0b2834;
+    background: #8dc2d4;
+    border: none;
+    padding: 15px 36px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
+}
+ 
+.btn-submit button:hover {
+    background: #6aafc5;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(141, 194, 212, 0.4);
+}
+ 
+.btn-submit button:active {
+    transform: translateY(0);
+}
+ 
+.btn-note {
+    font-size: 12px;
+    color: #a0c4d0;
+    font-weight: 300;
+}
+ 
+/* ── ANIMACIONES ── */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+ 
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+    .page {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+    }
+ 
+    .panel-image {
+        min-height: 320px;
+    }
+ 
+    .panel-form {
+        padding: 48px 28px;
+    }
+ 
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+ 
+    header {
+        padding: 0 24px;
+    }
+ 
+    header .menu {
+        gap: 18px;
+    }
+}
