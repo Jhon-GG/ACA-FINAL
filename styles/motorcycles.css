@@ -6,17 +6,18 @@
 
 body{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to right, #EBF3F5, #C5E2F0);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 4rem;
 }
 
 header{
     display: flex;
     width: 100vw;
-    height:10vh;
+    height:13vh;
     justify-content: space-between;
     align-items: center;
     padding-left: 4rem;
@@ -48,33 +49,66 @@ header{
 .menu a:hover{
     transform: scale(1.1);
     text-decoration: underline;
+    background-color: #8dc2d4;
+    width: auto;
+    border-radius: 50px;
+    color: #000;
 }
 
+.Motor{
+    background-color: #8dc2d4;
+    width: auto;
+    border-radius: 50px;
+}
 
 .title{
     font-family: Iosevka Charon;
+    display: flex;
+    width: 90vw;
+    margin-top: 2rem;
 }
 
 .title h1{
-        font-size: 800;
+    font-size: 800;
 }
 
 
 /* -------------------------------  Carrusel  ------------------------------------ */
 
-
-
-
-/* Contenedor principal: apila el carousel y los controles uno encima del otro, centrados */
 .carousel-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 28px;
-    margin-top: 3rem;
+    margin-top: 4rem;
+    width: 100%;
 }
 
-/* Área donde viven las tarjetas — tiene un tamaño fijo para que no se muevan al cambiar de slide */
+/* Título de cada sección de carrusel */
+.carousel-title {
+    font-family: Iosevka Charon, monospace;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2a2a2a;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-left: calc(50% - 430px); /* se alinea con el borde izquierdo del track */
+}
+
+.carousel-info{
+    font-family: Iosevka Charon, monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2a2a2a;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-left: 21rem;
+    /* border: 1px solid red; */
+    width: 60vw;
+}
+
 .carousel-track-container {
     position: relative;
     width: 860px;
@@ -84,7 +118,6 @@ header{
     justify-content: center;
 }
 
-/* Cada tarjeta del carousel: esquinas redondeadas, sombra suave y animación al moverse */
 .slide {
     position: absolute;
     border-radius: 18px;
@@ -94,7 +127,6 @@ header{
     box-shadow: 0 8px 40px rgba(0,0,0,0.18);
 }
 
-/* La imagen ocupa toda la tarjeta sin deformarse */
 .slide img {
     width: 100%;
     height: 100%;
@@ -103,7 +135,38 @@ header{
     transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Tarjeta central (la que está activa): la más grande, al frente y con sombra más pronunciada */
+/* ------- Label de texto bajo cada imagen ------- */
+
+.slide-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.4rem 1rem 0.7rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.70), transparent);
+    color: #fff;
+    font-family: Iosevka Charon, monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 0 0 18px 18px;
+
+    /* Por defecto invisible, solo aparece en el slide central */
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Solo el slide activo (posición 0) muestra el label */
+.slide[data-pos="0"] .slide-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ------------------------------------------------ */
+
 .slide[data-pos="0"] {
     width: 500px;
     height: 310px;
@@ -113,7 +176,6 @@ header{
     box-shadow: 0 20px 60px rgba(0,0,0,0.30);
 }
 
-/* Tarjeta inmediata a la izquierda: más pequeña y un poco oscurecida */
 .slide[data-pos="-1"] {
     width: 210px;
     height: 240px;
@@ -123,7 +185,6 @@ header{
     filter: brightness(0.75) saturate(0.7);
 }
 
-/* Tarjeta inmediata a la derecha: igual que la de la izquierda pero al otro lado */
 .slide[data-pos="1"] {
     width: 210px;
     height: 240px;
@@ -133,7 +194,6 @@ header{
     filter: brightness(0.75) saturate(0.7);
 }
 
-/* Segunda tarjeta a la izquierda: aún más pequeña y oscura, casi de fondo */
 .slide[data-pos="-2"] {
     width: 140px;
     height: 190px;
@@ -144,7 +204,6 @@ header{
     opacity: 0.7;
 }
 
-/* Segunda tarjeta a la derecha: igual que la anterior pero al otro lado */
 .slide[data-pos="2"] {
     width: 140px;
     height: 190px;
@@ -155,7 +214,6 @@ header{
     opacity: 0.7;
 }
 
-/* Tarjetas que quedan fuera del rango visible: completamente invisibles e inactivas al clic */
 .slide[data-pos="-3"],
 .slide[data-pos="3"],
 .slide[data-hidden] {
@@ -166,26 +224,22 @@ header{
     pointer-events: none;
 }
 
-/* Posición de salida por la izquierda (fuera de pantalla) */
 .slide[data-pos="-3"] {
     left: 50%;
     transform: translateX(calc(-50% - 490px));
 }
 
-/* Posición de salida por la derecha (fuera de pantalla) */
 .slide[data-pos="3"] {
     left: 50%;
     transform: translateX(calc(-50% + 490px));
 }
 
-/* Barra de controles: flechas y puntos alineados en fila */
 .controls {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-/* Botones de flecha: sin fondo ni borde, solo el ícono en gris */
 .arrow-btn {
     background: none;
     border: none;
@@ -200,18 +254,15 @@ header{
     padding: 0;
 }
 
-/* Al pasar el mouse encima, la flecha se oscurece */
 .arrow-btn:hover { color: #333; }
 .arrow-btn svg { width: 22px; height: 22px; }
 
-/* Fila de puntitos indicadores */
 .dots {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
-/* Cada puntito: pequeño círculo gris */
 .dot {
     width: 8px;
     height: 8px;
@@ -223,7 +274,6 @@ header{
     padding: 0;
 }
 
-/* El puntito del slide activo se pone morado y un poco más grande */
 .dot.active {
     background: #7c6fe0;
     width: 10px;

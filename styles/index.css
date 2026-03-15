@@ -16,7 +16,7 @@ body{
 header{
     display: flex;
     width: 100vw;
-    height:10vh;
+    height:13vh;
     justify-content: space-between;
     align-items: center;
     padding-left: 4rem;
@@ -27,6 +27,7 @@ header{
     width: 6vw;
     height: 6vh;
 }
+
 
 .menu{
     display: flex;
@@ -39,15 +40,25 @@ header{
 
 .menu a{
     text-decoration: none;
-    color: #000;
     transition: transform 0.2s;
     font-size: .9rem;
     padding: 1rem;
+    color: #000;
 }
 
 .menu a:hover{
     transform: scale(1.1);
     text-decoration: underline;
+    background-color: #8dc2d4;
+    width: auto;
+    border-radius: 50px;
+    color: #000;
+}
+
+.Home{
+    background-color: #8dc2d4;
+    width: auto;
+    border-radius: 50px;
 }
 
 .middle{
@@ -56,6 +67,7 @@ header{
     align-items: center;
     width: 75vw;
     height: 70vh;
+    margin-top: 2rem;
 }
 
 .TitleFrontPage{

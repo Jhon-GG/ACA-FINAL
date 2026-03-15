@@ -15,7 +15,7 @@
         <img class="logo" src="../assets/logo.svg" alt="logo">
         <section class="menu">
             <a href="../index.html">Home</a>
-            <a href="motorcycles.html">Motorcycles</a>
+            <a href="motorcycles.html" class="Motor">Motorcycles</a>
             <a href="accesories.html">Accesories</a>
             <a href="us.html">Us</a>
             <a href="contact.html">Contact</a>
@@ -24,25 +24,40 @@
     <section class="title">
         <h1>Motorcycles</h1>
     </section>
-    <div class="carousel-wrapper">
-        <div class="carousel-track-container" id="track">
-        <!-- slides injected por JS -->
-        </div>
-    
+
+    <!-- Carrusel 1 -->
+    <div id="carousel-1" class="carousel-wrapper">
+        <h2 class="carousel-title">Sport</h2>
+        <h3 class="carousel-info">Las motos deportivas son motocicletas diseñadas para ofrecer alto rendimiento, velocidad y precisión en la conducción. Se caracterizan por su diseño aerodinámico, motores potentes y una postura de manejo inclinada hacia adelante, lo que permite mayor control y estabilidad a altas velocidades.</h3>
+        <div class="carousel-track-container"> <!-- slides por JS --> </div>
         <div class="controls">
-        <button class="arrow-btn" id="prev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
-            </svg>
-        </button>
-    
-        <div class="dots" id="dots"></div>
-    
-        <button class="arrow-btn" id="next" aria-label="Siguiente">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"/>
-            </svg>
-        </button>
+            <button class="arrow-btn" id="prev-carousel-1"><!-- svg izq --></button>
+            <div class="dots"></div>
+            <button class="arrow-btn" id="next-carousel-1"><!-- svg der --></button>
+        </div>
+    </div>
+
+    <!-- Carrusel 2 -->
+    <div id="carousel-2" class="carousel-wrapper">
+        <h2 class="carousel-title">Naked</h2>
+        <h3 class="carousel-info">Las motos naked se caracterizan por tener un diseño más simple y sin carenados, dejando el motor y otras partes visibles. Ofrecen una posición de conducción más cómoda y versátil, siendo ideales tanto para la ciudad como para trayectos cortos en carretera.</h3>
+        <div class="carousel-track-container"></div>
+        <div class="controls">
+            <button class="arrow-btn" id="prev-carousel-2"><!-- svg izq --></button>
+            <div class="dots"></div>
+            <button class="arrow-btn" id="next-carousel-2"><!-- svg der --></button>
+        </div>
+    </div>
+
+    <!-- Carrusel 3 -->
+    <div id="carousel-3" class="carousel-wrapper">
+        <h2 class="carousel-title">Touring</h2>
+        <h3 class="carousel-info">Están diseñadas para viajes largos y mayor comodidad en carretera. Suelen incluir asientos amplios, parabrisas, maleteros y tecnología para el confort del conductor, permitiendo recorrer largas distancias de forma cómoda.</h3>
+        <div class="carousel-track-container"> <!-- slides por JS --> </div>
+        <div class="controls">
+            <button class="arrow-btn" id="prev-carousel-3"><!-- svg izq --></button>
+            <div class="dots"></div>
+            <button class="arrow-btn" id="next-carousel-3"><!-- svg der --></button>
         </div>
     </div>
     

@@ -6,17 +6,18 @@
 
 body{
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to right, #EBF3F5, #C5E2F0);
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 4rem;
 }
 
 header{
     display: flex;
     width: 100vw;
-    height:10vh;
+    height:13vh;
     justify-content: space-between;
     align-items: center;
     padding-left: 4rem;
@@ -48,4 +49,57 @@ header{
 .menu a:hover{
     transform: scale(1.1);
     text-decoration: underline;
+    background-color: #8dc2d4;
+    width: auto;
+    border-radius: 50px;
+    color: #000;
 }
+
+.Accesories{
+    background-color: #8dc2d4;
+    width: auto;
+    border-radius: 50px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #fff;
+    padding: 2rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, #bbeefb, #EBF3F5);
+    width: 70vw;
+    height: 30vh;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.title h1{
+    font-family: Iosevka Charon;
+    font-size: 7rem;
+}
+
+.title img{
+    width: auto;
+    height: 50vh;
+    margin-top: -5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
